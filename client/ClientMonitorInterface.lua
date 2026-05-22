@@ -122,7 +122,7 @@ function refreshDialTab(tabControl, addrBook)
 	local directPos = {x = 2, y = 2}
 
 	for i, addr in pairs(addrBook) do
-		local addressTable = AddressBook.stringToTable(addr.address)
+		local addressTable = addressBook.stringToTable(addr.address)
 
 		if not addr.hidden then
 			local color = colors.green
