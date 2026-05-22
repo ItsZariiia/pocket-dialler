@@ -1,3 +1,7 @@
+local interface = peripheral.find("basic_interface")
+    or peripheral.find("crystal_interface")
+    or peripheral.find("advanced_crystal_interface")
+
 function readTableFromFile(fileName)
     local file = fs.open(fileName, "r")
     local data = file.readAll()
@@ -57,8 +61,8 @@ function getAddressBook()
     return addressTable
 end
 
-function convertStringToAddress(addrStr)
-    if addrStr == "" or addrStr == "-" then
+function convertStringToAddress()
+    if interface.addressToString(address.address) == "" or interface.addressToString(address.address) == "-" then
         return {
             displayName = "Not connected",
             address = "",

@@ -209,7 +209,7 @@ function dataUpdater()
 
 			if stargate.isStargateConnected() and advanced.available then
 				activeAddress =
-					AddressBook.getAddressFromIDOrAddress(stargate.addressToString(stargate.getConnectedAddress()))
+					AddressBook.getAddressFromIDOrAddress(stargate.getConnectedAddress())
 			end
 
 			local iris = {
@@ -260,7 +260,7 @@ function listenDialStargate()
 	while true do
 		local event, address, isFast = os.pullEvent("dial_stargate")
 
-		activeAddress = AddressBook.getAddressFromIDOrAddress(address)
+		activeAddress = AddressBook.getAddressFromIDOrAddress(stargate.addressToString(address))
 
 		dialStargate(address, isFast)   
 	end
