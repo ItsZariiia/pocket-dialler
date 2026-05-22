@@ -262,7 +262,7 @@ function listenDialStargate()
 
 		activeAddress = AddressBook.getAddressFromIDOrAddress(address)
 
-		dialStargate(AddressBook.stringToTable(address), isFast)
+		dialStargate(address, isFast)
 	end
 end
 

@@ -92,6 +92,12 @@ function addAddress(id, address)
 	writeTableToFile("addresses.conf", addressTable)
 end
 
+function removeAddress(id)
+	addressTable[id] = nil
+
+	writeTableToFile("addresses.conf", addressTable)
+end
+
 function requestAddress(input, fastDial, addPOO)
     if interface.isWormholeOpen() or interface.isStargateDialingOut() or interface.getChevronsEngaged() > 0 then
         util.log("ERROR: Stargate is active!")
