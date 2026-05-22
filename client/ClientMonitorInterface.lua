@@ -126,9 +126,9 @@ function refreshDialTab(tabControl, addrBook)
 
 		if not addr.hidden then
 			local color = colors.green
-			if addr.security.restricted then
+			--[[if addr.security.restricted then
 				color = colors.red
-			end
+			end]]--
 
 			if #addressTable == 7 then -- 7-Chevron addresses
 				localList:addButton({
