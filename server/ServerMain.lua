@@ -13,7 +13,7 @@ local commands = {
 		alias = { "disconnect", "dc", "abort" },
 		description = "Disconnects the stargate, or aborts if currently dialing",
 		func = (function(cmdTable)
-			SGHandler.abortOrDisconnect()
+			SGHand.abortOrDisconnect()
 		end)
 	},
 	{
@@ -21,15 +21,15 @@ local commands = {
 		description = "Manage the stargate's iris",
 		func = (function (cmdTable)
 			if cmdTable[2] == "open" then
-				SGHandler.toggleIris(true)
+				SGHand.toggleIris(true)
 			elseif cmdTable[2] == "close" then
-				SGHandler.toggleIris(false)
+				SGHand.toggleIris(false)
 			elseif cmdTable[2] == "status" then
-				if SGHandler.stargate.getIris() then
+				if SGHand.stargate.getIris() then
 					print(
 						string.format(
 							"Iris close percentage: %i",
-							SGHandler.stargate.getIrisProgressPercentage()
+							SGHand.stargate.getIrisProgressPercentage()
 						)
 					)
 				else
@@ -42,14 +42,14 @@ local commands = {
 		name = "energyintg",
 		description = "Sets the stargate's energy target to 100GFE",
 		func = (function(cmdTable)
-			SGHandler.setGateEnergyTarget(Stargate, 100000000000)
+			SGHand.setGateEnergyTarget(Stargate, 100000000000)
 		end)
 	},
 	{
 		name = "energyints",
 		description = "Sets the stargate's energy target to 200MFE",
 		func = (function(cmdTable)
-			SGHandler.setGateEnergyTarget(Stargate, 200000)
+			SGHand.setGateEnergyTarget(Stargate, 200000)
 		end)
 	},
 	{
@@ -57,7 +57,7 @@ local commands = {
 		alias = {"transmit", "msg"},
 		description = "Sends a message through an active stargate",
 		func = (function (cmdTable)
-			if not SGHandler.stargate.isWormholeOpen() then
+			if not SGHand.stargate.isWormholeOpen() then
 				print("There must be an active connection in order to send a message")
 			end
 	
@@ -117,11 +117,11 @@ function commandHandler(cmd)
 end
 
 function startInterfaces()
-	Basalt.run()
+	basalt.run()
 end
 
 function run()
-    SGHandler.runListeners()
+    SGHand.runListeners()
 end
 
 return {

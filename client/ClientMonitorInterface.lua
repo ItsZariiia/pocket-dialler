@@ -352,9 +352,9 @@ end
 function createInterface(basalt)
 	monitor.setTextScale(0.5)
 
-	local x,y = Monitor.getSize()
+	local x,y = monitor.getSize()
 
-	local main = basalt.createFrame():setTerm(Monitor)
+	local main = basalt.createFrame():setTerm(monitor)
 
 	local tabControl = main:addTabControl({
 		x = 1,
