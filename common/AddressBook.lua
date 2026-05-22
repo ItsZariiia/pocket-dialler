@@ -69,7 +69,7 @@ function convertStringToAddress(addrStr)
         }
     else
 		return {
-			address = addrString,
+			address = address,
 			display = "Unknown",
 			security = {
 				irisAutoOpen = false,
