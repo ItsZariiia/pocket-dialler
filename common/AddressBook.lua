@@ -1,5 +1,5 @@
 function readTableFromFile(fileName)
-    local file = fs.open(filename, "r")
+    local file = fs.open(fileName, "r")
     local data = file.readAll()
     file.close()
 
