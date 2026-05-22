@@ -35,7 +35,7 @@ for i, arg in pairs(args) do
     sleep(1)
 end
 
-addressBook = require "common/AddressBook"
+addressBook = require "AddressBook"
 
 
 if peripheral.find("monitor") then 
@@ -47,7 +47,7 @@ if peripheral.find("monitor") then
     monitorInterface = require "ClientMonitorInterface"
     terminalInterface = require "ClientTerminalInterface"
 
-    ClientMain = require "/client/ClientMain"
+    ClientMain = require "ClientMain"
     ClientMain.run()
 else 
     InstanceType = "server"
