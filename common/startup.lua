@@ -44,7 +44,7 @@ if peripheral.find("monitor") then
     relay = { peripheral.find("redstone_relay") }
     monitor = peripheral.find("monitor")
     util = require "Util"
-    montitorInterface = require "ClientMonitorInterface"
+    monitorInterface = require "ClientMonitorInterface"
     terminalInterface = require "ClientTerminalInterface"
 
     ClientMain = require "/client/ClientMain"
