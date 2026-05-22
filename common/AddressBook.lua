@@ -60,7 +60,7 @@ end
 function convertStringToAddress(addrStr)
     if addrStr == "" or addrStr == "-" then
         return {
-            display = "Not connected",
+            displayName = "Not connected",
             address = "",
             security = {
                 irisAutoOpen = false,
@@ -88,12 +88,17 @@ function stringToTable(input)
     return addrTable
 end
 
+function addAddress(id, address)
+	addressTable[id] = address
+	writeTableToFile("addresses.conf", addressTable)
+end
+
 function requestAddress(input, fastDial, addPOO)
     if interface.isWormholeOpen() or interface.isStargateDialingOut() or interface.getChevronsEngaged() > 0 then
         util.log("ERROR: Stargate is active!")
     else
         local addrTable = { }
-        address = AddressBook.getAddressFromIDOrAddress(input)
+        address = addressBook.getAddressFromIDOrAddress(input)
 
         if address.security.restricted then
             util.log("This address is restricted! \nDialling sequence aborted!")
