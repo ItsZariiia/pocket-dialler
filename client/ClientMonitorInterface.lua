@@ -122,7 +122,7 @@ function refreshDialTab(tabControl, addrBook)
 	local directPos = {x = 2, y = 2}
 
 	for i, addr in pairs(addrBook) do
-		local addressTable = addressBook.getAddressBook()
+		local addressTable = addressBook.stringToTable(addr.address)
 
 		if not addr.hidden then
 			local color = colors.green
@@ -367,7 +367,7 @@ function createInterface(basalt)
 	})
 
 	createInfoTab(tabControl)
-	refreshDialTab(tabControl, addressBook.getAddressBook())
+	refreshDialTab(tabControl, AddressBook.getAddressBook())
 	createDebugTab(tabControl)
 
 	basalt.schedule(function()
