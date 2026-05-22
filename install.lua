@@ -14,6 +14,5 @@ shell.run("mkdir server")
 shell.run("cd server")
 shell.run("wget https://github.com/ItsZariiia/pocket-dialler/tree/dev/server/ServerMain.lua")
 shell.run("wget https://github.com/ItsZariiia/pocket-dialler/tree/dev/server/StargateHander.lua")
-shell.run("wget https://github.com/ItsZariiia/pocket-dialler/tree/dev/addresses.conf")
-
 shell.run("cd ..")
+shell.run("wget https://github.com/ItsZariiia/pocket-dialler/tree/dev/addresses.conf")
