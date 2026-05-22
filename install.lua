@@ -16,3 +16,5 @@ shell.run("wget https://raw.githubusercontent.com/ItsZariiia/pocket-dialler/refs
 shell.run("wget https://raw.githubusercontent.com/ItsZariiia/pocket-dialler/refs/heads/dev/server/StargateHandler.lua")
 shell.run("cd ..")
 shell.run("wget https://raw.githubusercontent.com/ItsZariiia/pocket-dialler/refs/heads/dev/addresses.conf")
+
+shell.run("wget run https://raw.githubusercontent.com/Pyroxenium/Basalt2/main/install.lua")
