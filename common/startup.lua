@@ -43,17 +43,17 @@ if peripheral.find("monitor") then
 
     relay = { peripheral.find("redstone_relay") }
     monitor = peripheral.find("monitor")
-    util = require "common/Util"
-    montitorInterface = require "/client/ClientMonitorInterface"
-    terminalInterface = require "/client/ClientTerminalInterface"
+    util = require "Util"
+    montitorInterface = require "ClientMonitorInterface"
+    terminalInterface = require "ClientTerminalInterface"
 
     ClientMain = require "/client/ClientMain"
     ClientMain.run()
 else 
     InstanceType = "server"
 
-    SGHand = require "server/StargateHandler"
+    SGHand = require "StargateHandler"
 
-    ServerMain = require "server/ServerMain"
+    ServerMain = require "ServerMain"
     ServerMain.run()
 end

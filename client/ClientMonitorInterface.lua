@@ -350,7 +350,7 @@ function listenBasaltChevronUpdate() -- "basalt_chevron_update"
 end
 
 function createInterface(basalt)
-	Monitor.setTextScale(0.5)
+	monitor.setTextScale(0.5)
 
 	local x,y = Monitor.getSize()
 

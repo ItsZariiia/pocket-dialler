@@ -9,6 +9,7 @@ function run()
     util.log("Starting Z Terminal Dialler")
 
     parallel.waitForAny(
+
         startInterfaces
     )
 end
