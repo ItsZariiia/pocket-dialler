@@ -71,7 +71,7 @@ function createInfoTab(tabControl)
 	feedbackLabel = infoTab:addLabel({ x = 2, y = 27, text = "", foreground = colors.yellow })
 end
 
-function refreshDialTab(tabControl, AddressBook)
+function refreshDialTab(tabControl, addrBook)
 	local dialTab = tabControl:newTab("Dial")
 
 	-- Fast Dial Checkbox
@@ -121,8 +121,8 @@ function refreshDialTab(tabControl, AddressBook)
 	local galacticPos = {x = 2, y = 2}
 	local directPos = {x = 2, y = 2}
 
-	for i, addr in pairs(AddressBook) do
-		local addressTable = addressBook.stringToTable(addr.address)
+	for i, addr in pairs(addrBook) do
+		local addressTable = AddressBook.stringToTable(addr.address)
 
 		if not addr.hidden then
 			local color = colors.green
