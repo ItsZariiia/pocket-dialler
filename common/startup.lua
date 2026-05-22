@@ -28,4 +28,32 @@ local autoUpdate = true
 for i, arg in pairs(args) do
     print("Addresses updating, stand by...")
     shell.run("delete addresses.conf")
+
+    shell.run("wget https://github.com/ItsZariiia/pocket-dialler/blob/dev/addresses.conf")
+
+    print("Addresses loaded, proceeding with startup...")
+    sleep(1)
+end
+
+addressBook = require "AddressBook"
+
+
+if peripheral.find("monitor") then 
+    InstanceType = "client"
+
+    relay = { peripheral.find("redstone_relay") }
+    monitor = peripheral.find("monitor")
+    util = require "Util"
+    montitorInterface = require "ClientMonitorInterface"
+    terminalInterface = require "ClientTerminalInterface"
+
+    ClientMain = require "ClientMain"
+    ClientMain.run()
+else 
+    InstanceType = "server"
+
+    SGHand = require "StargateHandler"
+
+    ServerMain = require "ServerMain"
+    ServerMain.run()
 end
