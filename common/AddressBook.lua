@@ -80,9 +80,9 @@ end
 
 function stringToTable(input)
     local addrTable = {}
-    for value in input:gmatch("[^-,]+") do
+    --[[for value in input:gmatch("[^-,]+") do
         table.insert(addrTable, tonumber(value))
-    end
+    end]]--
 
     return addrTable
 end
