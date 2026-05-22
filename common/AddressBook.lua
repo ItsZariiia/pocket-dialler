@@ -17,12 +17,11 @@ local addressTable = readTableFromFile("addresses.conf")
 
 function getAddressFromAddress(addrStr)
     if addrStr == nil then
-        print(addrStr)
         return nil
     else
         for name, address in pairs(addressTable) do
             if address.address == addrStr or address.address == addrStr:sub(1, -3) then
-                print(address)
+
                 return address
             end
         end
