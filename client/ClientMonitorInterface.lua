@@ -367,7 +367,7 @@ function createInterface(basalt)
 	})
 
 	createInfoTab(tabControl)
-	refreshDialTab(tabControl, AddressBook.getAddressBook())
+	refreshDialTab(tabControl, addressBook.getAddressBook())
 	createDebugTab(tabControl)
 
 	basalt.schedule(function()
