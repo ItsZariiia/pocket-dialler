@@ -14,7 +14,6 @@ function writeTableToFile(fileName, table)
 end
 
 local addressTable = readTableFromFile("addresses.conf")
-print(addressTable[1])
 
 function getAddressFromAddress(addrStr)
     if addrStr == nil then
