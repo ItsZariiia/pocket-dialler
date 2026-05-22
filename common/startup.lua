@@ -35,7 +35,7 @@ for i, arg in pairs(args) do
     sleep(1)
 end
 
-addressBook = require "AddressBook"
+addressBook = require "common/AddressBook"
 
 
 if peripheral.find("monitor") then 
@@ -43,17 +43,17 @@ if peripheral.find("monitor") then
 
     relay = { peripheral.find("redstone_relay") }
     monitor = peripheral.find("monitor")
-    util = require "Util"
-    montitorInterface = require "../client/ClientMonitorInterface"
-    terminalInterface = require "../client/ClientTerminalInterface"
+    util = require "common/Util"
+    montitorInterface = require "/client/ClientMonitorInterface"
+    terminalInterface = require "/client/ClientTerminalInterface"
 
-    ClientMain = require "../client/ClientMain"
+    ClientMain = require "/client/ClientMain"
     ClientMain.run()
 else 
     InstanceType = "server"
 
-    SGHand = require "StargateHandler"
+    SGHand = require "server/StargateHandler"
 
-    ServerMain = require "ServerMain"
+    ServerMain = require "server/ServerMain"
     ServerMain.run()
 end
